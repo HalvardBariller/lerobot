@@ -27,7 +27,7 @@ device = torch.device("cuda")
 # # Download the diffusion policy for pusht environment
 # pretrained_policy_path = Path(snapshot_download("lerobot/diffusion_pusht"))
 # OR uncomment the following to evaluate a policy from the local outputs/train folder.
-pretrained_policy_path = Path("/home/bariller/lerobot/outputs/train/act_aloha_sim_insertion_human")
+pretrained_policy_path = Path("/home/bariller/lerobot/outputs/train/act_aloha_sim_insertion_human ")
 
 policy = ACTPolicy.from_pretrained(pretrained_policy_path)
 policy.eval()
