@@ -20,7 +20,7 @@ output_directory.mkdir(parents=True, exist_ok=True)
 
 # Number of offline training steps (we'll only do offline training for this example.)
 # Adjust as you prefer. 5000 steps are needed to get something worth evaluating.
-training_steps = 12000
+training_steps = 20000
 device = torch.device("cuda")
 log_freq = 250
 
@@ -53,7 +53,7 @@ policy.train()
 policy.to(device)
 
 optimizer = torch.optim.Adam(policy.parameters(), lr=1e-4)
-scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3000, gamma=0.5)
+scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=4000, gamma=0.5)
 
 # Create dataloader for offline training.
 dataloader = torch.utils.data.DataLoader(
