@@ -157,6 +157,7 @@ def init_hydra_config(config_path: str, overrides: list[str] | None = None) -> D
         str(_relative_path_between(Path(config_path).absolute().parent, Path(__file__).absolute().parent)),
         version_base="1.2",
     )
+    print(f"Hydra config path: {config_path}")
     cfg = hydra.compose(Path(config_path).stem, overrides)
     return cfg
 
