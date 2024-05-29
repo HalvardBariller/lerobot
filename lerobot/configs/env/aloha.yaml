@@ -4,7 +4,8 @@ fps: 50
 
 env:
   name: aloha
-  task: AlohaInsertion-v0
+  # task: AlohaInsertion-v0
+  task: ???
   from_pixels: True
   pixels_only: False
   image_size: [3, 480, 640]
