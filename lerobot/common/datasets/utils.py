@@ -233,7 +233,6 @@ def load_previous_and_future_frames(
         # get timestamps used as query to retrieve data of previous/future frames
         delta_ts = delta_timestamps[key]
         query_ts = current_ts + torch.tensor(delta_ts)
-
         # compute distances between each query timestamp and all timestamps of all the frames belonging to the episode
         dist = torch.cdist(query_ts[:, None], ep_timestamps[:, None], p=1)
         min_, argmin_ = dist.min(1)

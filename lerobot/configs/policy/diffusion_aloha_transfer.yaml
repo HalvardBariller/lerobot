@@ -29,7 +29,7 @@ training:
   log_freq: 250
   save_model: true
 
-  batch_size: 32
+  batch_size: 64
   grad_clip_norm: 10
   lr: 1.0e-4
   lr_scheduler: cosine
@@ -58,8 +58,10 @@ policy:
 
   # Input / output structure.
   n_obs_steps: 2
-  horizon: 16
-  n_action_steps: 8
+  # horizon: 16
+  horizon: 52
+  # n_action_steps: 8
+  n_action_steps: 40
 
   input_shapes:
     # TODO(rcadene, alexander-soare): add variables for height and width from the dataset/env?
@@ -71,8 +73,8 @@ policy:
   # Normalization / Unnormalization
   input_normalization_modes:
     observation.images.top: mean_std
-    # observation.state: min_max
-    observation.state: mean_std
+    observation.state: min_max
+    # observation.state: mean_std
   output_normalization_modes:
     action: min_max
 
