@@ -40,7 +40,7 @@ env = gym.make(
 
 # Reset the policy and environmens to prepare for rollout
 policy.reset()
-numpy_observation, info = env.reset(seed=42)
+numpy_observation, info = env.reset(seed=1000)
 
 # Prepare to collect every rewards and all the frames of the episode,
 # from initial state to final state.
